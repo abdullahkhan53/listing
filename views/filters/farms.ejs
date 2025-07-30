@@ -1,0 +1,16 @@
+<% layout('/layouts/boilerplate') %>
+<h1>Farms</h1>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <% for(let data of allData){ %>
+        <div class="card listing-card" style="width:25rem" >
+        <a href="/listing/<%=data._id%>">
+          <img src="<%=data.image.url%>" class="card-img-top" alt="orange">
+          <div class="card-body">
+            <p class="card-text"><b><%= data.title %></b></p>
+            <p class="card-text">RS/ <%= data.price %> &nbsp;&nbsp;&nbsp; <span class="tax-info">+18%GST</span></p>
+          </div>
+        </a>
+        </div>
+        <% } %>
+      </div>

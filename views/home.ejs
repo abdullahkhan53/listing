@@ -1,0 +1,152 @@
+<% layout('/layouts/boilerplate') %> 
+
+<style>
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  #filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-inline: auto;
+    margin-top: 20px;
+  }
+  .filter-box{   
+     display: flex;
+     align-items: center;
+  }
+  .filter{
+    margin-right: 2rem;
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.8rem;
+  }
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+  .line{
+    visibility: hidden;
+    color: grey
+  }
+  #tax-toggle{
+    border: 1px solid black;
+    padding: 0.8rem;
+    border-radius: 1rem;
+  }
+  .tax-info{
+    display: none;
+  }
+</style>
+
+    <div id="filters">
+
+      <div class="filter-box">
+      <div class="filter">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mountain"></i>
+        <a href="/listing/filters/mountains"><p>Mountains</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-city"></i>
+        <a href="/listing/filters/iconiccity"><p>Iconic City</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-person-swimming"></i>
+        <a href="/listing/filters/amazingpools"><p>Amazing Pools</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-mountain-city"></i>
+        <a href="/listing/filters/mountainscity"><p>Mountains City</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-cow"></i>
+        <a href="/listing/filters/farms"><p>Farms</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-campground"></i>
+        <a href="/listing/filters/camping"><p>Camping</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-chess-rook"></i>
+        <a href="/listing/filters/castles"><p>Castles</p></a>
+        <span class="line">____</span>
+      </div>
+      <div class="filter">
+        <i class="fa-solid fa-chess-rook"></i>
+        <p>Castles</p>
+        <span class="line">____</span>
+      </div>
+     
+
+    </div>
+
+    <div id="tax-toggle">
+      <div class="form-check form-switch form-check-reverse">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+    </div>
+
+    </div>
+
+    </div>
+
+   
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <% for(let data of allData){ %>
+        <div class="card listing-card" style="width:25rem" >
+          <a href="/listing/<%=data._id%>">
+           <img src="<%=data.image.url%>" class="card-img-top" alt="orange">
+            <div class="card-body">
+              <p class="card-text"><b><%= data.title %></b></p>
+              <p class="card-text">RS/ <%= data.price %> &nbsp;&nbsp;&nbsp; <span class="tax-info">+18%GST</span></p>
+          </div>
+        </a>
+    </div>
+        <% } %>
+    </div>
+
+  <script>
+   
+    let filters = document.querySelectorAll(".filter");
+    let toggle = document.querySelector("#switchCheckDefault");
+    let taxInfo = document.querySelectorAll(".tax-info");
+
+    for(let i=0; i<filters.length; i++){
+      filters[i].addEventListener("mouseover", () => {
+        let line = filters[i].querySelector(".line")
+        line.style.visibility = "visible";
+      })
+    } 
+
+    for(let i=0; i<filters.length; i++){
+      filters[i].addEventListener("mouseout", () => {
+        console.log("mouse out")
+        let line = filters[i].querySelector(".line")
+        line.style.visibility = "hidden";
+      })
+    } 
+
+    toggle.addEventListener("click", () => {
+      for(tax of taxInfo){
+        if(tax.style.display != "inline"){
+        tax.style.display = "inline"
+        } else{
+        tax.style.display = "none"
+        }
+      }
+    })
+
+  </script>

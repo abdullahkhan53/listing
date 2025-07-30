@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+    /* over */
+}
+
+.footer{
+    height: 8rem;
+    background-color: #ededed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: auto;
+}
+.f-social-links i{
+    margin-right: 10px; 
+    font-size: 24px;   
+}
+.f-social-links i:hover{
+    scale: 1.3;
+    background-color: white;
+    color: black;
+    transition: all ease-in 400ms;
+}
+.f-info a{
+    text-decoration: none;
+}
+/* Cards */
+
+.row{
+    display: flex;
+    justify-content: center;
+    margin-block: 20px !important;
+}
+.listing-card{
+    border: none !important;
+}
+.card img:hover{
+    opacity: 0.8;
+}
+.card-img-top{
+    height: 16rem;
+    border-radius: 8px;
+}
+.card-btns{
+    display: flex;
+    gap: 1vw;
+}  
+.card-btns form button{
+    font-size: 12px !important;
+} 
+.card a{
+    text-decoration: none;
+    color: #222222;
+}
+
+/* MAP */
+#map{
+    height: 60vh;
+    width: 80vh;
+}
+/* Btnn */
+#navSearchBtn{
+    border-radius: 25px;
+}
+#navSearch{
+    border-radius: 25px;
+}
+#navSearchBtn:hover{
+    background-color: red;
+    color: #fff;
+}
+#tax-toggle{
+    height: 50px;
+}

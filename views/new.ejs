@@ -1,0 +1,69 @@
+<% layout('/layouts/boilerplate') %>
+    
+    <br>
+    <h3>Here you can create new Listing!!</h3>
+    <div class="row">
+        <div class="col-8">
+    <form method="POST" action="/listing" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title :</label>
+                <input class="form-control" type="text" name="Listing[title]" placeholder="enter title" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description :</label>
+                <textarea class="form-control" type="text" name="Listing[description]" placeholder="enter description" required></textarea>
+                <div class="invalid-feedback">
+                    Wirte some description
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image :</label>
+            <input class="form-control" type="file" name="Listing[image]">
+        </div>
+        <div class="row mb-3 mt-0 ">
+            <div class="col-4">
+                <label for="price" class="form-label">Price :</label>
+                    <input class="form-control" type="text" name="Listing[price]" placeholder="enter price" required>
+                    <div class="invalid-feedback">
+                        This is required Field
+                    </div>
+            </div>
+            <div class="col-8">
+                <label for="country" class="form-label">Country :</label>
+                <input class="form-control" type="text" name="Listing[country]" placeholder="Pakistan" required>
+                <div class="invalid-feedback">
+                    Please enter Valid Country Name
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-0">
+            <div class="col-4">
+            <label for="location" class="form-label">Location :</label>
+            <input class="form-control" type="text" name="Listing[location]" placeholder="Karachi, Sindh" required>
+            </div>
+            <!--  -->
+            <div class="col-8">
+                <label for="category"  class="form-label">Category:</label>
+                <select  class="form-control" type="text" name="Listing[category]" required>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Iconic City">Iconic City</option>
+                    <option value="Amazing pools">Amazing pools</option>
+                    <option value="Mountains City">Mountains City</option>
+                    <option value="Farms">Farms</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Castles">Castles</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-dark">Add</button>
+    </form>
+
+
+</div>
+</div>
+
+<!-- <script src="/Backend/public/JS/script.js"></script> -->
