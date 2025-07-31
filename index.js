@@ -33,8 +33,6 @@ main().then((res) => {
     console.log('mongoose connection error');    
 })
 
-
-
 // ==== Express setup
 const app = express();
 app.use(express.static(path.join(__dirname, '/public')));
