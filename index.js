@@ -102,6 +102,10 @@ class ExpressError extends Error{
     }
 }
 
+app.get("/", (req, res) => {
+    res.render("home.ejs"); // Make sure you have this file
+});
+
 // Routers 
 app.use("/listing", listings);
 app.use("/listing/:id/reviews", reviews);
