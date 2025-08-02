@@ -10,6 +10,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const Listing = require("./models/listing.js")
 
 const listings = require("./router/listings.js");
 const reviews = require("./router/reviews.js");
@@ -102,8 +103,9 @@ class ExpressError extends Error{
     }
 }
 
-app.get("/", (req, res) => {
-    res.render("home.ejs"); // Make sure you have this file
+app.get("/", async(req, res) => {
+    const allData = await Listing.find({});
+    res.render('home.ejs', {allData});
 });
 
 // Routers 
