@@ -34,12 +34,16 @@ body{
 .f-info a{
     text-decoration: none;
 }
+.fa-brands{
+    color: black;
+}
 /* Cards */
 
 .row{
     display: flex;
     justify-content: center;
     margin-block: 20px !important;
+    margin-inline: 7px !important;
 }
 .listing-card{
     border: none !important;
@@ -66,7 +70,7 @@ body{
 /* MAP */
 #map{
     height: 60vh;
-    width: 80vh;
+    width: 100vh;
 }
 /* Btnn */
 #navSearchBtn{
@@ -82,3 +86,16 @@ body{
 #tax-toggle{
     height: 50px;
 }
+ @media (max-width: 450px) {
+.form-control{
+    min-width: 80vw !important;
+}
+#map{
+    height: 60vh;
+    width: 90vw;
+}    
+.row{
+    display: flex;
+    justify-content: start;
+}
+ }

@@ -23,15 +23,15 @@
             <label for="image" class="form-label">Upload Image :</label>
             <input class="form-control" type="file" name="Listing[image]">
         </div>
-        <div class="row mb-3 mt-0 ">
-            <div class="col-4">
+        <div class="row mb-3 mt-0 row-cols-1 row-cols-sm-1 row-cols-md-2">
+            <div>
                 <label for="price" class="form-label">Price :</label>
                     <input class="form-control" type="text" name="Listing[price]" placeholder="enter price" required>
                     <div class="invalid-feedback">
                         This is required Field
                     </div>
             </div>
-            <div class="col-8">
+            <div>
                 <label for="country" class="form-label">Country :</label>
                 <input class="form-control" type="text" name="Listing[country]" placeholder="Pakistan" required>
                 <div class="invalid-feedback">
@@ -40,13 +40,13 @@
             </div>
         </div>
 
-        <div class="row mt-0">
-            <div class="col-4">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+            <div>
             <label for="location" class="form-label">Location :</label>
             <input class="form-control" type="text" name="Listing[location]" placeholder="Karachi, Sindh" required>
             </div>
             <!--  -->
-            <div class="col-8">
+            <div>
                 <label for="category"  class="form-label">Category:</label>
                 <select  class="form-control" type="text" name="Listing[category]" required>
                     <option value="Mountains">Mountains</option>

@@ -11,10 +11,12 @@
     justify-content: space-around;
     margin-inline: auto;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
   .filter-box{   
      display: flex;
      align-items: center;
+     flex-wrap: wrap;
   }
   .filter{
     margin-right: 2rem;
@@ -38,6 +40,19 @@
   .tax-info{
     display: none;
   }
+
+  @media (max-width: 400px) {
+    .filter-box{
+      justify-content: center;
+    }
+    .filter{
+      font-size: 0.7rem
+    }
+     #tax-toggle{
+      display: none;
+     }
+  }
+
 </style>
 
     <div id="filters">

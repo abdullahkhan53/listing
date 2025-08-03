@@ -66,9 +66,9 @@
       <% if(listing.reviews.length > 0){ %>
       <!-- ----REVIEWS---- -->
       <h4>Reviews</h4>
-      <div class="row">
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
           <%for( review of listing.reviews) {%>
-         <div class="card col-5 ms-3 mb-3" >
+         <div class="card ms-3 mb-3" >
             <div class="card-body ">
             <h5 class="card-title"><b>@<%= review.author.username %></b></h5>
             <p class="card-text"><%=review.comment%></p>
@@ -89,14 +89,14 @@
       <!-- -------------------- -->
 
       
+      <!------- MAP ------->
+      <div class="col-8 mb-3">
+       <h3>Where you'll be</h3>
+       <div id="map"></div>
+      </div>
+      <!-- XXX ---MAP--- XXX -->
     </div>
 </div>
-<!------- MAP ------->
-<div class="col-8 offset-3 mb-3">
- <h3>Where you'll be</h3>
- <div id="map"></div>
-</div>
-<!-- XXX ---MAP--- XXX -->
 
 </body>
 
