@@ -12,7 +12,7 @@ const Listing = require("../models/listing.js");
 // index && create route of listings!!
 router.route("/")
 .get( listingController.index )
-.post( 
+.post(
     isLoggedin,
     upload.single('Listing[image]'),
     isSized,
@@ -25,11 +25,15 @@ router.get('/new', isLoggedin,  listingController.newListing)
 
 router.get("/search", async(req, res) => {
     let searchCountry = req.query.country;
-    if(!searchCountry){
+    if(!searchCountry || searchCountry.length < 4 ){
         req.flash("error", "There is no listing you search for");
         res.redirect("/listing")
     }
     let listing = await Listing.find({country: searchCountry});
+    if(listing.length <= 0){
+        req.flash("error", "There is no listing you search for");
+        res.redirect("/listing")
+    }
     res.render("search.ejs", {listing});
 })
 

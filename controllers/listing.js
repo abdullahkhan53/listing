@@ -31,8 +31,8 @@ module.exports.newListing = (req, res) => {
     res.render('new.ejs')
 }
 
-module.exports.createListing =  async(req, res, next) => {
-
+module.exports.createListing =  async(req, res) => {
+    
   let response = await geocodingClient
   .forwardGeocode({
   query: req.body.Listing.location,
@@ -42,20 +42,27 @@ module.exports.createListing =  async(req, res, next) => {
    
     let url = req.file.path;
     let filename = req.file.filename;
+    console.log(req.body)
     let result = listingSchema.validate(req.body);
 
     if(result.error){
-        throw new ExpressError(400, result.error)
+        console.log(result.error)
+        throw new ExpressError(400, result.error)  
     }
+
+    try{
     const newListing = new Listing(req.body.Listing);
     newListing.image = {url, filename}
     newListing.owner = req.user._id;
     newListing.geometry = response.body.features[0].geometry;
     
-    await newListing.save()
-    console.log(newListing)
+    let newwListing = await newListing.save()
+    console.log(newwListing)
     req.flash("success", "New Listing Added!");
     res.redirect('/listing')
+    } catch(err){
+        console.log("ERRORR!!", err)
+    }
     
 };
 

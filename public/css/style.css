@@ -43,7 +43,7 @@ body{
     display: flex;
     justify-content: center;
     margin-block: 20px !important;
-    margin-inline: 7px !important;
+    margin-inline: 5px !important;
 }
 .listing-card{
     border: none !important;
@@ -97,5 +97,12 @@ body{
 .row{
     display: flex;
     justify-content: start;
+}
+#navSearch{
+    width: 0px !important;
+    font-size: 12px;
+}
+#navSearchBtn{
+    font-size: 12px;
 }
  }
