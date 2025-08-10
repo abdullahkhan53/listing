@@ -13,7 +13,12 @@ module.exports.mountains =  async(req, res) => {
 module.exports.city = async(req, res) => {
     let allData = await Listing.find({category: "Iconic City"})
     // console.log(listing);
-    res.render("filters/iconic.ejs", {allData});
+    if(allData.length <= 0 ){
+        req.flash("error", "There is no Listing you search for");
+        res.redirect("/listing");
+    } else{
+        res.render("filters/iconic.ejs", {allData});
+    }
 };
 
 module.exports.pools = async(req, res) => {
