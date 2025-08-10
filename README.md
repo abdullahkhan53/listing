@@ -40,4 +40,4 @@ MONGO_URL=your_mongodb_connection_string
 SESSION_SECRET=your_session_secret
 
 # Start the app
-npm index
+node index
