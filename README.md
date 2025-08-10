@@ -23,21 +23,11 @@ Built with **Node.js**, **Express**, **MongoDB**, and **Cloudinary** for image s
 
 ---
 
-## Screenshots
-*(Add your app screenshots here)*  
-Example:
-![Home Page](https://via.placeholder.com/800x400?text=App+Screenshot)
-
----
-
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/listing-app.git
-
-# Navigate into the folder
-cd listing-app
+git clone https://github.com/abdullahkhan53/listing
 
 # Install dependencies
 npm install
@@ -50,4 +40,4 @@ MONGO_URL=your_mongodb_connection_string
 SESSION_SECRET=your_session_secret
 
 # Start the app
-npm start
+npm index
